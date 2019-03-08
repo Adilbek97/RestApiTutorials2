@@ -30,7 +30,7 @@ class Student(models.Model):
 class Subject(models.Model):
     name = models.CharField(max_length=100)
     teacher = models.ForeignKey(Teacher, related_name='subjects', on_delete=models.CASCADE)
-    student = models.ForeignKey(Student, related_name='subjects', on_delete=models.CASCADE)
+    # student = models.ForeignKey(Student, related_name='subjects', on_delete=models.CASCADE)
 
 
 class Questions(models.Model):
