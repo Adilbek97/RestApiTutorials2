@@ -28,12 +28,12 @@ class ResultSerializers(serializers.ModelSerializer):
 
 
 class SubjectSerializer(serializers.ModelSerializer):
-    questions = QuestionsSerializer(many=True)
-    results = ResultSerializers(many=True)
+    questions = QuestionsSerializer(many=True, read_only=True, write_only=False)
+    results = ResultSerializers(many=True, read_only=True, write_only=False)
 
     class Meta:
         model = Subject
-        fields = ('id', 'name', 'questions', 'results')
+        fields = '__all__'
 
 
 class TeacherSerializer(serializers.HyperlinkedModelSerializer):
