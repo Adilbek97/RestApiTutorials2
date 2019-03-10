@@ -39,8 +39,6 @@ class SubjectSerializer(serializers.ModelSerializer):
 class TeacherSerializer(serializers.HyperlinkedModelSerializer):
     subjects = SubjectSerializer(many=True, read_only=True, write_only=False)
 
-    # results = ResultSerializers(many=True)
-
     class Meta:
         model = Teacher
         fields = ('id', 'firstName', 'lastName', 'login', 'password', 'subjects')
